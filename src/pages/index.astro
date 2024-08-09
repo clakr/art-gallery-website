@@ -1,16 +1,15 @@
 ---
-import "base.css";
+import Base from "@layouts/Base.astro";
+import Header from "@sections/Header.astro";
+import Hero from "@sections/Hero.astro";
+import Footer from "@sections/Footer.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
+<Base>
+  <title slot="title">Home</title>
   <body>
-    <h1 class="">Astro</h1>
+    <Header />
+    <Hero />
+    <Footer />
   </body>
-</html>
+</Base>

@@ -8,4 +8,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  devToolbar: {
+    enabled: false,
+  },
 });
