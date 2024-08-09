@@ -1,5 +1,51 @@
 ---
-
+import { Image } from "astro:assets";
+import arrowRight from "@assets/icon-arrow-right.svg";
 ---
 
-<header>header</header>
+<header class="tablet:relative tablet:isolate desktop:flex">
+  <div class="hidden w-[450px] bg-black desktop:block">qwe</div>
+  <picture class="tablet:block tablet:max-h-[700px] desktop:max-h-[800px]">
+    <source
+      srcset="./assets/desktop/image-hero.jpg, ./assets/desktop/image-hero@2x.jpg 2x"
+      media="(min-width: 1440px)"
+    />
+    <source
+      srcset="./assets/tablet/image-hero.jpg, ./assets/tablet/image-hero@2x.jpg 2x"
+      media="(min-width: 768px)"
+    />
+    <source
+      srcset="./assets/mobile/image-hero.jpg, ./assets/mobile/image-hero@2x.jpg 2x"
+    />
+    <img
+      src="./assets/mobile/image-hero.jpg"
+      alt=""
+      class="w-full tablet:w-[unset]"
+    />
+  </picture>
+  <div
+    class="mt-8 grid gap-y-8 px-4 tablet:absolute tablet:right-10 tablet:top-[145px] tablet:mt-0 tablet:max-w-[339px] tablet:gap-y-12 tablet:px-0 desktop:left-[165px] desktop:right-0 desktop:top-[189px] desktop:max-w-[1110px] desktop:grid-cols-[514px_1fr_350px] desktop:grid-rows-2"
+  >
+    <h1
+      class="text-heading-xl desktop:row-span-2 desktop:text-white desktop:mix-blend-difference"
+    >
+      Modern <br />
+      Art Gallery
+    </h1>
+    <p class="text-body-m desktop:col-start-3">
+      The arts in the collection of the Modern Art Gallery all started from a
+      spark of inspiration. Will these pieces inspire you? Visit us and find
+      out.
+    </p>
+    <a href="/location" class="flex desktop:col-start-3 desktop:self-start">
+      <span
+        class="bg-primary px-8 py-6 font-heading text-[20px] font-extrabold uppercase tracking-[3.64px] text-white"
+      >
+        Our Location
+      </span>
+      <span class="bg-accent p-6">
+        <Image src={arrowRight} alt="" />
+      </span>
+    </a>
+  </div>
+</header>

@@ -10,7 +10,23 @@ import "base.css";
     <meta name="generator" content={Astro.generator} />
 
     <slot name="title" />
+
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/BigShouldersDisplay.ttf"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Outfit.ttf"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
   </head>
   <slot />
+
 
 </html>

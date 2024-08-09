@@ -1,8 +1,57 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    screens: {
+      tablet: "768px",
+      desktop: "1440px",
+    },
+    extend: {
+      fontFamily: {
+        sans: ["Outfit", ...defaultTheme.fontFamily.sans],
+        heading: ["Big Shoulders Display", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: "#151515",
+        accent: "#d5966c",
+        subtle: "#444444",
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents }) {
+      return addComponents({
+        ".text-heading-xl": {
+          fontFamily: "theme('fontFamily.heading')",
+          fontWeight: "900",
+          textTransform: "uppercase",
+          color: "theme('colors.primary')",
+          fontSize: "60px",
+          lineHeight: "55px",
+          ['@media (min-width: theme("screens.tablet"))']: {
+            fontSize: "70px",
+            lineHeight: "65px",
+          },
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "96px",
+            lineHeight: "88px",
+          },
+        },
+        ".text-body-m": {
+          fontWeight: "300",
+          color: "theme('colors.subtle')",
+          fontSize: "18px",
+          lineHeight: "28px",
+          textWrap: "pretty",
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "22px",
+            lineHeight: "32px",
+          },
+        },
+      });
+    }),
+  ],
 };

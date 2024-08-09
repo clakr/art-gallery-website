@@ -4,7 +4,8 @@
     "baseUrl": "src",
     "paths": {
       "@layouts/*": ["layouts/*"],
-      "@sections/*": ["sections/*"]
+      "@sections/*": ["sections/*"],
+      "@assets/*": ["assets/*"]
     }
   }
 }
