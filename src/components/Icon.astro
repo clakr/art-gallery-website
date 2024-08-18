@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+type Props = HTMLAttributes<"svg">;
+
+const { class: className, ...rest } = Astro.props;
+
+const classes = twMerge(
+  "cursor-pointer transition-colors hover:text-accent",
+  className,
+);
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  class={classes}
+  {...rest}
+>
+  <slot />
+</svg>

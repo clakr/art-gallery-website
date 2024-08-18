@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import arrowRight from "@assets/icon-arrow-right.svg";
+import Link from "@components/Link.astro";
 ---
 
 <header class="tablet:relative tablet:isolate desktop:flex">
@@ -37,15 +36,11 @@ import arrowRight from "@assets/icon-arrow-right.svg";
       spark of inspiration. Will these pieces inspire you? Visit us and find
       out.
     </p>
-    <a href="/location" class="flex desktop:col-start-3 desktop:self-start">
-      <span
-        class="bg-primary px-8 py-6 font-heading text-[20px] font-extrabold uppercase tracking-[3.64px] text-white"
-      >
-        Our Location
-      </span>
-      <span class="bg-accent p-6">
-        <Image src={arrowRight} alt="" />
-      </span>
-    </a>
+    <Link
+      href="/location"
+      class="justify-self-start desktop:col-start-3 desktop:self-start"
+    >
+      Our Location
+    </Link>
   </div>
 </header>
