@@ -7,7 +7,7 @@ export default {
   theme: {
     screens: {
       tablet: "768px",
-      desktop: "1440px",
+      desktop: "1024px",
     },
     extend: {
       fontFamily: {
@@ -28,7 +28,6 @@ export default {
           fontFamily: "theme('fontFamily.heading')",
           fontWeight: "900",
           textTransform: "uppercase",
-          color: "theme('colors.primary')",
           fontSize: "60px",
           lineHeight: "55px",
           ['@media (min-width: theme("screens.tablet"))']: {
@@ -40,9 +39,19 @@ export default {
             lineHeight: "88px",
           },
         },
+        ".text-heading-m": {
+          fontFamily: "theme('fontFamily.heading')",
+          fontWeight: "900",
+          textTransform: "uppercase",
+          fontSize: "50px",
+          lineHeight: "45px",
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "60px",
+            lineHeight: "50px",
+          },
+        },
         ".text-body-m": {
           fontWeight: "300",
-          color: "theme('colors.subtle')",
           fontSize: "18px",
           lineHeight: "28px",
           textWrap: "pretty",
