@@ -2,9 +2,16 @@
 import Facebook from "@components/FacebookIcon.astro";
 import Instagram from "@components/InstagramIcon.astro";
 import Twitter from "@components/TwitterIcon.astro";
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+type Props = HTMLAttributes<"footer">;
+
+const { class: className } = Astro.props;
+const classes = twMerge("bg-primary text-white", className);
 ---
 
-<footer class="bg-primary text-white">
+<footer class={classes}>
   <div
     class="flex flex-col gap-y-[38px] px-8 py-12 tablet:flex-row tablet:justify-between tablet:gap-x-[65px] tablet:px-10 tablet:py-14 desktop:mx-auto desktop:max-w-[calc(80px+1110px)] desktop:py-20"
   >

@@ -24,10 +24,15 @@ export default {
   plugins: [
     plugin(function ({ addComponents }) {
       return addComponents({
-        ".text-heading-xl": {
+        '[class^="text-heading"]': {
           fontFamily: "theme('fontFamily.heading')",
           fontWeight: "900",
           textTransform: "uppercase",
+        },
+        '[class^="text-body"]': {
+          fontWeight: "300",
+        },
+        ".text-heading-xl": {
           fontSize: "60px",
           lineHeight: "55px",
           ['@media (min-width: theme("screens.tablet"))']: {
@@ -39,10 +44,19 @@ export default {
             lineHeight: "88px",
           },
         },
+        ".text-heading-l": {
+          fontSize: "50px",
+          lineHeight: "45px",
+          ['@media (min-width: theme("screens.tablet"))']: {
+            fontSize: "55px",
+            lineHeight: "50px",
+          },
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "70px",
+            lineHeight: "70px",
+          },
+        },
         ".text-heading-m": {
-          fontFamily: "theme('fontFamily.heading')",
-          fontWeight: "900",
-          textTransform: "uppercase",
           fontSize: "50px",
           lineHeight: "45px",
           ['@media (min-width: theme("screens.desktop"))']: {
@@ -50,8 +64,15 @@ export default {
             lineHeight: "50px",
           },
         },
+        ".text-heading-s": {
+          fontSize: "32px",
+          lineHeight: "32px",
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "36px",
+            lineHeight: "36px",
+          },
+        },
         ".text-body-m": {
-          fontWeight: "300",
           fontSize: "18px",
           lineHeight: "28px",
           ['@media (min-width: theme("screens.desktop"))']: {
@@ -60,7 +81,6 @@ export default {
           },
         },
         ".text-body-s": {
-          fontWeight: "300",
           fontSize: "16px",
           lineHeight: "26px",
           ['@media (min-width: theme("screens.desktop"))']: {
