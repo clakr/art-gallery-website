@@ -54,10 +54,18 @@ export default {
           fontWeight: "300",
           fontSize: "18px",
           lineHeight: "28px",
-          textWrap: "pretty",
           ['@media (min-width: theme("screens.desktop"))']: {
             fontSize: "22px",
             lineHeight: "32px",
+          },
+        },
+        ".text-body-s": {
+          fontWeight: "300",
+          fontSize: "16px",
+          lineHeight: "26px",
+          ['@media (min-width: theme("screens.desktop"))']: {
+            fontSize: "18px",
+            lineHeight: "28px",
           },
         },
       });

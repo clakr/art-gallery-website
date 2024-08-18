@@ -1,5 +1,26 @@
 ---
-
+import Facebook from "@components/FacebookIcon.astro";
+import Instagram from "@components/InstagramIcon.astro";
+import Twitter from "@components/TwitterIcon.astro";
 ---
 
-<footer>footer</footer>
+<footer class="bg-primary text-white">
+  <div
+    class="flex flex-col gap-y-[38px] px-8 py-12 tablet:flex-row tablet:justify-between tablet:gap-x-[65px] tablet:px-10 tablet:py-14 desktop:mx-auto desktop:max-w-[calc(80px+1110px)] desktop:py-20"
+  >
+    <h2
+      class="font-heading text-[20px] font-black uppercase leading-none tablet:whitespace-nowrap desktop:text-[29px]"
+    >
+      Modern <br /> Art Gallery
+    </h2>
+    <p class="tablet:max-w-[25ch] desktop:max-w-[37ch]">
+      The Modern Art Gallery is free to all visitors and open seven days a week
+      from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+    </p>
+    <div class="flex gap-x-5">
+      <Facebook />
+      <Instagram />
+      <Twitter />
+    </div>
+  </div>
+</footer>
